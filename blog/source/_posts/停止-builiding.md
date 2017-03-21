@@ -3,6 +3,7 @@ title: 停止 builiding
 date: 2017-03-20 10:01:22
 categories:
 - 笔记
+- android studio
 tags:
 - android studio
 - 笔记
