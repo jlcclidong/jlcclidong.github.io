@@ -38,8 +38,9 @@ tags:
                 .readTimeout(3000l, TimeUnit.MILLISECONDS)
                 .commonParams("haha","1") //添加公共参数
                 .commonHeader("nihao","1")  //添加公共头
-                .AppInterceptor("eason", new LogInterceptor())   //应用拦截器
-                .NetWorkInterceptor("eason",new LogInterceptor()) //网络拦截器 将重定向等的request response页拦截打印
+                //這兩個攔截器衹能選用一個
+                //.AppInterceptor("eason", new LogInterceptor())   //应用拦截器
+                .NetWorkInterceptor("eason",new LogInterceptor()) //网络拦截器 将重定向等的request response页拦截打印  
                 .CookieJar(new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(App.this)))
                 .build();
 ````
@@ -83,6 +84,23 @@ tags:
                     }
                 });
                 ````
+  * postjson  支持postJSON
+```java
+      Ok.postJson().url("")
+          .json("")
+          .build()
+          .call(new CallBack() {
+                @Override
+                  public void fail(Exception e) {
+
+                }
+
+                @Override
+                public void success(String response) {
+
+                }
+            });
+   ```
   * download 文件下载只做到最基本的下载,断点续传和暂停下载暂未做，后续会追加
   ```java
          Ok.download().url("http://static.oschina.net/uploads/space/2015/0629/170157_rxDh_1767531.png")
