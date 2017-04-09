@@ -161,8 +161,12 @@ tags:
             Log.e("============request start===============");
             Log.e("url:" + request.url());
             Log.e("method:" + request.method());
-            if (request.headers() != null && request.headers().size() > 0)
-                Log.e("headers:" + request.headers().toString());
+            if (request.headers() != null && request.headers().size() > 0){
+                Headers headers = request.headers();
+                for (int i = 0; i < headers.size(); i++) {
+                    Log.e("headers"+headers.name(i)+"---"+headers.value(i));
+                }
+            }
             Log.e("============request end=================");
         } catch (Exception e) {
             Log.e("log request has something worng!!");
@@ -182,8 +186,12 @@ tags:
             Log.e("total time:" + time);
             if (!TextUtils.isEmpty(copy.message()))
                 Log.e("message:" + copy.message());
-            if (copy.headers() != null && copy.headers().size() > 0)
-                Log.e("headers:" + copy.headers().toString());
+                if (copy.headers() != null && copy.headers().size() > 0) {
+                    Headers headers = copy.headers();
+                    for (int i = 0; i < headers.size(); i++) {
+                        Log.e("\t" + headers.name(i) + ": " + headers.value(i));
+                    }
+                }
             Log.e("============response end================");
             ResponseBody body = copy.body();
             if (body != null) {
