@@ -9,8 +9,6 @@ categories:
 - java
 ---
 
-# for()循环与foreach()在List中的使用
-
 ## 数组
 对于数组中两种循环都是相同的 foreach转换成不同for循环
 
