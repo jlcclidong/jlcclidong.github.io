@@ -13,17 +13,17 @@ categories:
 ### 获取Class 对象
 *  
 ```java
-    Class clazz = a.class;
+    Class clazz = A.class;
   ```
 * String 要放全路径包名 可能会报ClassNotFoundException
   ```java
 try {
-    Class class1 = Class.forName("refletc.a");
+    Class class1 = Class.forName("refletc.A");
   } catch (ClassNotFoundException e) {
     e.printStackTrace();
   }
 ```
-
+<!-- more -->
 ### Class 方法
 #### 获取名称
 ```java
@@ -72,7 +72,7 @@ Field[] method = aClass.getFields(); //获取变量
             e.printStackTrace();
         }
 ```
-## Field变量
+## Field变量 可以通过此方法动态改变成员变量中的静态变量
 ```java
       try {
             //获取所有的变量 私有的不行
@@ -95,4 +95,42 @@ Field[] method = aClass.getFields(); //获取变量
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
+```
+## Method方法
+```java
+  Method[] methods = clazz.getMethods();
+  try {
+    Method method = clazz.getMethod("test", String.class);//参数1为方法名 参数2为参数类型，没有参数传null
+    method.invoke(clazz.newInstance(), "test");           //执行方法 参数1传实例 2为参数
+    Method method2 = clazz.getMethod("testStatic", null); //获取静态方法
+    method2.invoke(null, null);                           //执行静态方法 1可以传null 没有参数传null
+  } catch (Exception e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+  }
+```
+## 访问私有方法 变量
+### Field
+```java
+  try {
+    Field privateField = clazz.getDeclaredField("privateString");
+    privateField.setAccessible(true);   //设置可以访问 可以读写 不开启会报错
+    A a = clazz.newInstance();
+    String privateString = (String) privateField.get(a);
+    privateField.set(a, "changeField");
+  } catch (Exception e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+  }
+```
+### Method
+```java
+  try {
+			Method privateMethod = clazz.getDeclaredMethod("privateMehtod", String.class, int.class);
+			privateMethod.setAccessible(true);
+			privateMethod.invoke(clazz.newInstance(), "private", 12);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 ```
