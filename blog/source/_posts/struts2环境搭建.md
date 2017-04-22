@@ -1,5 +1,5 @@
 ---
-title: '''struts2环境搭建’'
+title: struts2环境搭建
 date: 2017-04-21 15:55:11
 categories:
 - javaee
@@ -50,8 +50,6 @@ tags:
             "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"    
     "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-	<constant name="struts.devMode" value="true"/> 开启这个之后可动态修改配置
-	<constant name="struts.action.extension" value="li"/> 修改action后缀
 	<package name="s" extends="struts-default">
 		<action name="hell" class="com.eason.hello.HelloWorld">
 			<result>/hello.jsp</result>
@@ -60,3 +58,24 @@ tags:
 </struts>
 ```
 * 创建类 创建方法 运行...
+
+### 配置struts.xml  在struts.properties文件中创建重复的属性会覆盖   在web.xml中重复的属性会最终覆盖之前的属性
+```xml
+	<constant name="struts.action.extension" value="li,," /> //配置后缀
+	<constant name="struts.devMode" value="true" />					//开启dev模式 修改配置文件不用重启  更多的错误信息
+	<constant name="struts.i18n.encoding" value="UTF-8" />	//编码
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" /> //是否开启动态方法调用 动作名称！动作方法名  尽量不启用 方法名称放在url中不安全Â
+```
+```xml
+<package name="s" extends="struts-default">
+	name 属性唯一
+	extends 继承struts-default 可以struts的核心功能
+	namespace 命名空间 添加之后路径名同事改变
+	<action name="hell" class="com.eason.hello.HelloWorld" method="hello">
+		name 自定义名称 用于url调用 不可以添加.action
+		class 类全限定名称
+		method 方法名
+		<result>/hello.jsp</result>
+	</action>
+</package>
+```
