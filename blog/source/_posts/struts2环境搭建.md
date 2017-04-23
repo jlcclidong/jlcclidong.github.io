@@ -64,18 +64,82 @@ tags:
 	<constant name="struts.action.extension" value="li,," /> //配置后缀
 	<constant name="struts.devMode" value="true" />					//开启dev模式 修改配置文件不用重启  更多的错误信息
 	<constant name="struts.i18n.encoding" value="UTF-8" />	//编码
-	<constant name="struts.enable.DynamicMethodInvocation" value="true" /> //是否开启动态方法调用 动作名称！动作方法名  尽量不启用 方法名称放在url中不安全Â
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" /> //是否开启动态方法调用 动作名称！动作方法名  尽量不启用 方法名称放在url中不安全
 ```
 ```xml
 <package name="s" extends="struts-default">
 	name 属性唯一
 	extends 继承struts-default 可以struts的核心功能
 	namespace 命名空间 添加之后路径名同事改变
-	<action name="hell" class="com.eason.hello.HelloWorld" method="hello">
+	<action name="hello" class="com.eason.hello.HelloWorld" method="hello">
 		name 自定义名称 用于url调用 不可以添加.action
 		class 类全限定名称
 		method 方法名
-		<result>/hello.jsp</result>
+		<result name="add">/add.jsp</result>
+			name 与动作方法的返回值相同
+			type dispatcher 请求转发 默认值
+					 redirect  重定向 重定向后地址栏会发生改变-显著特征
+					 <result name="success" type="redirect">/redirect.jsp</result>
+					 chain 转发到另一个动作
+					 同package下转发到另一个动作
+					 <action name="hello" class="com.eason.l.HelloWorld">
+	 				 		<result name="success" type="chain">action</result>
+ 					 </action>
+ 				 	 <action name="action" class="com.eason.l.HelloWorld" method="action">
+	 						<result name="action">/success.jsp</result>
+ 					 </action>
+					 不同package下
+					 <action name="hello" class="com.eason.l.HelloWorld">
+						 	<result name="success" type="chain">
+								<param name="namespace">/p2</param> 填写package的name
+								<param name="actionName">hello</param> 填写方法名称
+							</result>
+						</action>
+					 redirectAction 重定向到另一个动作 同上除了type不相同
+					 <action name="hello_*" class="com.eason.l.HelloWorld" method="{1}">
+						 <result type="redirect">/direct.jsp</result>
+						 <result name="add" type="redirectAction">hello</result>
+						 在2.5之后通配符方法需要添加
+						 <allowed-methods>add,delete</allowed-methods>
+					 </action>
 	</action>
 </package>
+```
+### struts.xml分包管理
+* 新建xml文件
+* 正常写配置信息
+* 在struts.xml 引入
+```xml
+<include file="struts_action.xml"></include>
+```
+
+### servletApi获取
+* 推荐直接获取
+```java
+	private HttpServletResponse response;
+	private ServletContext application;
+	private HttpSession session;
+	private HttpServletRequest request;
+	request = ServletActionContext.getRequest();
+	response = ServletActionContext.getResponse();
+	application = ServletActionContext.getServletContext();
+	session = request.getSession();
+```
+* 实现接口方法
+```java
+public class ServletAPI extends ActionSupport
+		implements ServletContextAware, ServletResponseAware, ServletRequestAware {
+			@Override
+			public void setServletRequest(HttpServletRequest request){
+				this.request = request;
+			}
+			@Override
+			public void setServletResponse(HttpServletResponse arg0) {
+				this.response = arg0;
+			}
+			@Override
+			public void setServletContext(ServletContext arg0) {
+				this.application = arg0;
+			}
+		}
 ```
