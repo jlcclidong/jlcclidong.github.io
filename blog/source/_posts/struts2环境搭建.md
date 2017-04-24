@@ -23,7 +23,7 @@ tags:
 * log4j-api-2.7.jar 对日志的扩展
 * ognl-3.1.12.jar OGNL表达式
 * struts2-core-2.5.10.1.jar 核心库（新版包含xwork无需添加xwork）
-
+<!-- more -->
 ### 创建工程
 * 将上文中的jar包拷入WEB-INFO中的lib，加到builPath
 * 在WEB-INFO中创建web.xml 添加 注意StrutsPrepareAndExecuteFilter类的位置在2.5中全限定名为这个
