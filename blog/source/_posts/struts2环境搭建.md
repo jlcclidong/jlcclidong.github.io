@@ -8,7 +8,18 @@ tags:
 - javaee
 ---
 ## Struts2 环境搭建
-### 下载jar包
+### 下包方法
+#### maven方式
+直接在eclipse中新建一个mavneproject--->选择webapp那项建立工程
+在pom.xml中添加struts2的核心依赖
+```xml
+<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-core</artifactId>
+			<version>2.3.14</version>
+</dependency>
+```
+#### 传统方式下载jar包
 [Struts2官网](https://struts.apache.org/)中下载最新jar包 当前版本2.5.10
 其中关键性jar包为
 * asm-5.1.jar 操作字节码 基于子类的动态代理
@@ -24,6 +35,7 @@ tags:
 * ognl-3.1.12.jar OGNL表达式
 * struts2-core-2.5.10.1.jar 核心库（新版包含xwork无需添加xwork）
 <!-- more -->
+
 ### 创建工程
 * 将上文中的jar包拷入WEB-INFO中的lib，加到builPath
 * 在WEB-INFO中创建web.xml 添加 注意StrutsPrepareAndExecuteFilter类的位置在2.5中全限定名为这个
