@@ -15,6 +15,7 @@ tags:
 			<version>2.3.14</version>
 </dependency>
 ```
+<!-- more -->
 ## 在Action中
 ```java
 public class Login extends ActionSupport{

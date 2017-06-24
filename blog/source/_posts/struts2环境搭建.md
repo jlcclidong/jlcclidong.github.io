@@ -16,7 +16,7 @@ tags:
 <dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
-			<version>2.3.14</version>
+			<version>2.5.10</version>
 </dependency>
 ```
 #### 传统方式下载jar包

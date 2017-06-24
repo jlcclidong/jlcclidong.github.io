@@ -18,6 +18,7 @@ tags:
 	}
   //get and set..
 ```
+<!-- more -->
 在配置action中添加
 ```xml
 <action name="adduser" class="com.eason.DynamicTest" method="addUser">
@@ -29,14 +30,15 @@ tags:
 ## 动态获取正文
 * java类同上时 属性为成员变量时 直接访问即可,属性名称要相同http://localhost:8080/0424/adduser1?name=li&age=1
 * javabean 分出时 生成单独的domain包 访问
-```java
-public class User {
-	private String name;
-	private int age;
-  //set and get
-}
-```
-```java
+  ```java
+  public class User {
+  	private String name;
+  	private int age;
+    //set and get
+  }
+  ```
+
+  ```java
   private User user;
 
 	public User getUser() {
@@ -46,7 +48,7 @@ public class User {
 	public void setUser(User user) {
 		this.user = user;
 	}
-```
+  ```
 访问时需要这样http://localhost:8080/0424/adduser2?user.name=li&user.age=1
 * javabean 分出时 实现ModelDriven 接口 此时javabean必须初始化
 ```java
