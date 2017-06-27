@@ -73,9 +73,53 @@ tags:
   ```sql
   SELECT prod_name, prod_price FROM Products WHERE vend_id IN('DLL01','BRS01') AND prod_price >= 10
   ```
-#### 通配符
+
+#### 通配符 LIKE
+  * 通配符搜索一般比前面讨论的其他搜索要耗费更长的处理时
+  * 不要过度使用通配符。如果其他操作符能达到相同的目的，应该使用其他操作符。
+  * 在确实需要使用通配符时，也尽量不要把它们用在搜索模式的开始处。把通配符置于开始处，搜索起来是最慢的。
+
 
 * % 匹配字符类型 可以在任何位置 可以多个同时使用 但是 通配符%看起来像是可以匹配任何东西，但有个例外，这就是NULL。子句WHERE prod_name LIKE '%'不会匹配产品名称为NULL的行。
   ```sql
   SELECT * FROM t_user WHERE Tel LIKE '1550440%'
   ```
+
+* _ 下划线 一个下划线只能匹配一个字符
+  ```sql
+  SELECT * FROM t_user WHERE Tel LIKE '1550440940_'
+  ```
+
+#### 计算字段
+
+* 拼接字段
+```sql
+SELECT  CONCAT(Gender,'(',RealName,')') AS GR FROM t_user WHERE Tel = 15504409406
+//别名 用as来引用导致输出结果可以直接用此字段使用
+```
+
+* 计算字段
+```sql
+SELECT LoginNum*CType AS la,LoginNum,CType FROM t_user WHERE Tel=15504409406
+```
+
+#### 函数
+
+* 文本处理函数
+
+  * 某字段左起几个字符
+```sql
+SELECT LEFT(RealName,1) AS left_name from t_user WHERE Tel = 18629863729;
+```
+  * 某个字段的长度
+```sql
+SELECT LENGTH(Tel) AS left_name from t_user
+```
+  * 大写变小写
+```sql
+SELECT LOWER(w_wk.KeyWord) from w_wk
+```
+  * 小写变大写
+```sql
+SELECT UPPER(w_wk.KeyWord) from w_wk
+```
