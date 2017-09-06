@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javaee,sql," />
+  <meta name="keywords" content="sql,javaee," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="sql笔记Select—想选择什么，以及从什么地方选简单例子 检索单个列 RealName FROM t_user1   检索多个列 RealName,Gender FROM t_user1//在选择多个列时，一定要在列名之间加上逗号，但最后一个列名后不加。如果在最后一个列名后加了逗号，将出现错误。  检索所有列 * FROM t_user1   检索返回不同的值 DISTINCT Ctype,G">
-<meta name="keywords" content="javaee,sql">
+<meta name="description" content="sql笔记今日乐，不可忘，乐未央，何为自苦，使我心悲。 Select—想选择什么，以及从什么地方选简单例子 检索单个列 1SELECT RealName FROM t_user  检索多个列 12   SELECT RealName,Gender FROM t_user//在选择多个列时，一定要在列名之间加上逗号，但最后一个列名后不加。如果在最后一个列名后加了逗号，将出现错误。  检索所有列 1S">
+<meta name="keywords" content="sql,javaee">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sql笔记">
 <meta property="og:url" content="http://yoursite.com/2017/06/24/sql笔记/index.html">
 <meta property="og:site_name" content="薛定谔">
-<meta property="og:description" content="sql笔记Select—想选择什么，以及从什么地方选简单例子 检索单个列 RealName FROM t_user1   检索多个列 RealName,Gender FROM t_user1//在选择多个列时，一定要在列名之间加上逗号，但最后一个列名后不加。如果在最后一个列名后加了逗号，将出现错误。  检索所有列 * FROM t_user1   检索返回不同的值 DISTINCT Ctype,G">
-<meta property="og:updated_time" content="2017-06-24T17:19:31.000Z">
+<meta property="og:description" content="sql笔记今日乐，不可忘，乐未央，何为自苦，使我心悲。 Select—想选择什么，以及从什么地方选简单例子 检索单个列 1SELECT RealName FROM t_user  检索多个列 12   SELECT RealName,Gender FROM t_user//在选择多个列时，一定要在列名之间加上逗号，但最后一个列名后不加。如果在最后一个列名后加了逗号，将出现错误。  检索所有列 1S">
+<meta property="og:updated_time" content="2017-06-27T15:42:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql笔记">
-<meta name="twitter:description" content="sql笔记Select—想选择什么，以及从什么地方选简单例子 检索单个列 RealName FROM t_user1   检索多个列 RealName,Gender FROM t_user1//在选择多个列时，一定要在列名之间加上逗号，但最后一个列名后不加。如果在最后一个列名后加了逗号，将出现错误。  检索所有列 * FROM t_user1   检索返回不同的值 DISTINCT Ctype,G">
+<meta name="twitter:description" content="sql笔记今日乐，不可忘，乐未央，何为自苦，使我心悲。 Select—想选择什么，以及从什么地方选简单例子 检索单个列 1SELECT RealName FROM t_user  检索多个列 12   SELECT RealName,Gender FROM t_user//在选择多个列时，一定要在列名之间加上逗号，但最后一个列名后不加。如果在最后一个列名后加了逗号，将出现错误。  检索所有列 1S">
 
 
 
@@ -374,45 +374,86 @@
       
 
       
-        <h2 id="sql笔记"><a href="#sql笔记" class="headerlink" title="sql笔记"></a>sql笔记</h2><h3 id="Select—想选择什么，以及从什么地方选"><a href="#Select—想选择什么，以及从什么地方选" class="headerlink" title="Select—想选择什么，以及从什么地方选"></a>Select—想选择什么，以及从什么地方选</h3><h4 id="简单例子"><a href="#简单例子" class="headerlink" title="简单例子"></a>简单例子</h4><ul>
+        <h2 id="sql笔记"><a href="#sql笔记" class="headerlink" title="sql笔记"></a>sql笔记</h2><pre><code>今日乐，不可忘，乐未央，何为自苦，使我心悲。
+</code></pre><h3 id="Select—想选择什么，以及从什么地方选"><a href="#Select—想选择什么，以及从什么地方选" class="headerlink" title="Select—想选择什么，以及从什么地方选"></a>Select—想选择什么，以及从什么地方选</h3><h4 id="简单例子"><a href="#简单例子" class="headerlink" title="简单例子"></a>简单例子</h4><ul>
 <li><p>检索单个列</p>
-<figure class="highlight plain"><figcaption><span>RealName FROM t_user</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> RealName <span class="keyword">FROM</span> t_user</div></pre></td></tr></table></figure>
 </li>
 <li><p>检索多个列</p>
-<figure class="highlight plain"><figcaption><span>RealName,Gender FROM t_user</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">//在选择多个列时，一定要在列名之间加上逗号，但最后一个列名后不加。如果在最后一个列名后加了逗号，将出现错误。</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">   <span class="keyword">SELECT</span> RealName,Gender <span class="keyword">FROM</span> t_user</div><div class="line">//在选择多个列时，一定要在列名之间加上逗号，但最后一个列名后不加。如果在最后一个列名后加了逗号，将出现错误。</div></pre></td></tr></table></figure>
 </li>
 <li><p>检索所有列</p>
-<figure class="highlight plain"><figcaption><span>* FROM t_user</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> t_user</div></pre></td></tr></table></figure>
 </li>
 <li><p>检索返回不同的值</p>
-<figure class="highlight plain"><figcaption><span>DISTINCT Ctype,Gender FROM t_user</span><a href="//DISTINCT会将这个字段不重复的值返回,DISTINCT关键字作用于所有的列，不仅仅是跟在其后的那一列。例如，你指定SELECT">DISTINCT Ctype, Gender，除非指定的两列完全相同，否则所有的行都会被检索出来</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Ctype,Gender <span class="keyword">FROM</span> t_user  //<span class="keyword">DISTINCT</span>会将这个字段不重复的值返回,<span class="keyword">DISTINCT</span>关键字作用于所有的列，不仅仅是跟在其后的那一列。例如，你指定<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Ctype, Gender，除非指定的两列完全相同，否则所有的行都会被检索出来</div></pre></td></tr></table></figure>
 </li>
 <li><p>检索限制结果</p>
-<figure class="highlight plain"><figcaption><span>Gender FROM t_user LIMIT 5  OFFSET 5;</span><a href="//各个数据库方式不同mysql中使用方法">限制从第五个开始 长度为5 SELECT Gender FROM t_user LIMIT 5,5;</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> Gender <span class="keyword">FROM</span> t_user <span class="keyword">LIMIT</span> <span class="number">5</span>  <span class="keyword">OFFSET</span> <span class="number">5</span>; //各个数据库方式不同mysql中使用方法 限制从第五个开始 长度为5 <span class="keyword">SELECT</span> Gender <span class="keyword">FROM</span> t_user <span class="keyword">LIMIT</span> <span class="number">5</span>,<span class="number">5</span>;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="排序—关系数据库设计理论认为，如果不明确规定排序顺序，则不应该假定检索出的数据的顺序有任何意义。"><a href="#排序—关系数据库设计理论认为，如果不明确规定排序顺序，则不应该假定检索出的数据的顺序有任何意义。" class="headerlink" title="排序—关系数据库设计理论认为，如果不明确规定排序顺序，则不应该假定检索出的数据的顺序有任何意义。"></a>排序—关系数据库设计理论认为，如果不明确规定排序顺序，则不应该假定检索出的数据的顺序有任何意义。</h4><ul>
 <li><p>单列排序</p>
-<figure class="highlight plain"><figcaption><span>* FROM t_user ORDER BY RealName</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">//在指定一条ORDER BY子句时，应该保证它是SELECT语句中最后一条子句。如果它不是最后的子句，将会出现错误消息。</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> t_user <span class="keyword">ORDER</span> <span class="keyword">BY</span> RealName</div><div class="line">//在指定一条<span class="keyword">ORDER</span> <span class="keyword">BY</span>子句时，应该保证它是<span class="keyword">SELECT</span>语句中最后一条子句。如果它不是最后的子句，将会出现错误消息。</div></pre></td></tr></table></figure>
 </li>
 <li><p>多列排序</p>
-<figure class="highlight plain"><figcaption><span>* FROM t_user ORDER BY RealName,Gender</span><a href="//只有在realname有相同值之后才会比较Gender">link</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> t_user <span class="keyword">ORDER</span> <span class="keyword">BY</span> RealName,Gender //只有在realname有相同值之后才会比较Gender</div></pre></td></tr></table></figure>
 </li>
 <li><p>升降序</p>
-<figure class="highlight plain"><figcaption><span>* FROM t_user ORDER BY RealName DESC,Gender ASC//升降序默认只针对前面的列成立 DESC降序 ASC默认升序可不写</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> t_user <span class="keyword">ORDER</span> <span class="keyword">BY</span> RealName <span class="keyword">DESC</span>,Gender <span class="keyword">ASC</span>//升降序默认只针对前面的列成立 <span class="keyword">DESC</span>降序 <span class="keyword">ASC</span>默认升序可不写</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="where"><a href="#where" class="headerlink" title="where"></a>where</h4><ul>
 <li><p>is Null —在创建表时，表设计人员可以指定其中的列能否不包含值。在一个列不包含值时，称其包含空值NULL。</p>
-<figure class="highlight plain"><figcaption><span>* FROM t_user WHERE t_user.Tel IS NULL</span><a href="//通过过滤选择不包含指定值的所有行时，你可能希望返回含NULL值的行。但是这做不到。因为未知（unknown）有特殊的含义，数据库不知道它们是否匹配，所以在进行匹配过滤或非匹配过滤时，不会返回这些结果。">link</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> t_user <span class="keyword">WHERE</span> t_user.Tel <span class="keyword">IS</span> <span class="literal">NULL</span> //通过过滤选择不包含指定值的所有行时，你可能希望返回含<span class="literal">NULL</span>值的行。但是这做不到。因为未知（<span class="keyword">unknown</span>）有特殊的含义，数据库不知道它们是否匹配，所以在进行匹配过滤或非匹配过滤时，不会返回这些结果。</div></pre></td></tr></table></figure>
 </li>
 <li><p>And</p>
-<figure class="highlight plain"><figcaption><span>* FROM t_user WHERE Tel > 15504409406 AND ID < 91000 AND Gender= '男'</span><a href="//并列条件可以使用And连接">link</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> t_user <span class="keyword">WHERE</span> Tel &gt; <span class="number">15504409406</span> <span class="keyword">AND</span> <span class="keyword">ID</span> &lt; <span class="number">91000</span> <span class="keyword">AND</span> Gender= <span class="string">'男'</span> //并列条件可以使用<span class="keyword">And</span>连接</div></pre></td></tr></table></figure>
 </li>
 <li><p>or or并列时一般满足第一个条件就会返回不需在做其他操作</p>
-<figure class="highlight plain"><figcaption><span>prod_name, prod_price FROM Products WHERE (vend_id = 'DLL01' OR vend_id = 'BRS01') AND prod_price >= 10;//用圆括号括起来不会产生歧义 否则 And 会比 or优先导致结果出错</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> prod_name, prod_price <span class="keyword">FROM</span> Products <span class="keyword">WHERE</span> (vend_id = <span class="string">'DLL01'</span> <span class="keyword">OR</span> vend_id = <span class="string">'BRS01'</span>) <span class="keyword">AND</span> prod_price &gt;= <span class="number">10</span>;//用圆括号括起来不会产生歧义 否则 And 会比 or优先导致结果出错</div></pre></td></tr></table></figure>
 </li>
-<li><p>IN 与or具有相同功能 更好的观察性 更好的速度 可以包含select语句<br><code>SELECT prod_name, prod_price FROM Products WHERE vend_id IN(&#39;DLL01&#39;,&#39;BRS01&#39;) AND prod_price &gt;= 10</code></p>
+<li><p>IN 与or具有相同功能 更好的观察性 更好的速度 可以包含select语句</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> prod_name, prod_price <span class="keyword">FROM</span> Products <span class="keyword">WHERE</span> vend_id <span class="keyword">IN</span>(<span class="string">'DLL01'</span>,<span class="string">'BRS01'</span>) <span class="keyword">AND</span> prod_price &gt;= <span class="number">10</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="通配符-LIKE"><a href="#通配符-LIKE" class="headerlink" title="通配符 LIKE"></a>通配符 LIKE</h4><ul>
+<li>通配符搜索一般比前面讨论的其他搜索要耗费更长的处理时</li>
+<li>不要过度使用通配符。如果其他操作符能达到相同的目的，应该使用其他操作符。</li>
+<li>在确实需要使用通配符时，也尽量不要把它们用在搜索模式的开始处。把通配符置于开始处，搜索起来是最慢的。</li>
+</ul>
+<ul>
+<li><p>% 匹配字符类型 可以在任何位置 可以多个同时使用 但是 通配符%看起来像是可以匹配任何东西，但有个例外，这就是NULL。子句WHERE prod_name LIKE ‘%’不会匹配产品名称为NULL的行。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> t_user <span class="keyword">WHERE</span> Tel <span class="keyword">LIKE</span> <span class="string">'1550440%'</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>_ 下划线 一个下划线只能匹配一个字符</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> t_user <span class="keyword">WHERE</span> Tel <span class="keyword">LIKE</span> <span class="string">'1550440940_'</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="计算字段"><a href="#计算字段" class="headerlink" title="计算字段"></a>计算字段</h4><ul>
+<li><p>拼接字段</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span>  <span class="keyword">CONCAT</span>(Gender,<span class="string">'('</span>,RealName,<span class="string">')'</span>) <span class="keyword">AS</span> GR <span class="keyword">FROM</span> t_user <span class="keyword">WHERE</span> Tel = <span class="number">15504409406</span></div><div class="line">//别名 用<span class="keyword">as</span>来引用导致输出结果可以直接用此字段使用</div></pre></td></tr></table></figure>
+</li>
+<li><p>计算字段</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> LoginNum*CType <span class="keyword">AS</span> la,LoginNum,CType <span class="keyword">FROM</span> t_user <span class="keyword">WHERE</span> Tel=<span class="number">15504409406</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><ul>
+<li><p>文本处理函数</p>
+<ul>
+<li><p>某字段左起几个字符</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">LEFT</span>(RealName,<span class="number">1</span>) <span class="keyword">AS</span> left_name <span class="keyword">from</span> t_user <span class="keyword">WHERE</span> Tel = <span class="number">18629863729</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>某个字段的长度</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">LENGTH</span>(Tel) <span class="keyword">AS</span> left_name <span class="keyword">from</span> t_user</div></pre></td></tr></table></figure>
+</li>
+<li><p>大写变小写</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">LOWER</span>(w_wk.KeyWord) <span class="keyword">from</span> w_wk</div></pre></td></tr></table></figure>
+</li>
+<li><p>小写变大写</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">UPPER</span>(w_wk.KeyWord) <span class="keyword">from</span> w_wk</div></pre></td></tr></table></figure>
+</li>
+</ul>
 </li>
 </ul>
 
@@ -438,9 +479,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javaee/" rel="tag"># javaee</a>
-          
             <a href="/tags/sql/" rel="tag"># sql</a>
+          
+            <a href="/tags/javaee/" rel="tag"># javaee</a>
           
         </div>
       
@@ -453,15 +494,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/05/11/struts2拦截器/" rel="next" title="struts2拦截器">
+                <i class="fa fa-chevron-left"></i> struts2拦截器
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/11/struts2拦截器/" rel="prev" title="struts2拦截器">
-                struts2拦截器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -606,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sql笔记"><span class="nav-number">1.</span> <span class="nav-text">sql笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Select—想选择什么，以及从什么地方选"><span class="nav-number">1.1.</span> <span class="nav-text">Select—想选择什么，以及从什么地方选</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单例子"><span class="nav-number">1.1.1.</span> <span class="nav-text">简单例子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#排序—关系数据库设计理论认为，如果不明确规定排序顺序，则不应该假定检索出的数据的顺序有任何意义。"><span class="nav-number">1.1.2.</span> <span class="nav-text">排序—关系数据库设计理论认为，如果不明确规定排序顺序，则不应该假定检索出的数据的顺序有任何意义。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#where"><span class="nav-number">1.1.3.</span> <span class="nav-text">where</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sql笔记"><span class="nav-number">1.</span> <span class="nav-text">sql笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Select—想选择什么，以及从什么地方选"><span class="nav-number">1.1.</span> <span class="nav-text">Select—想选择什么，以及从什么地方选</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单例子"><span class="nav-number">1.1.1.</span> <span class="nav-text">简单例子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#排序—关系数据库设计理论认为，如果不明确规定排序顺序，则不应该假定检索出的数据的顺序有任何意义。"><span class="nav-number">1.1.2.</span> <span class="nav-text">排序—关系数据库设计理论认为，如果不明确规定排序顺序，则不应该假定检索出的数据的顺序有任何意义。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#where"><span class="nav-number">1.1.3.</span> <span class="nav-text">where</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通配符-LIKE"><span class="nav-number">1.1.4.</span> <span class="nav-text">通配符 LIKE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算字段"><span class="nav-number">1.1.5.</span> <span class="nav-text">计算字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数"><span class="nav-number">1.1.6.</span> <span class="nav-text">函数</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
